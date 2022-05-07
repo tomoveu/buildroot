@@ -1,0 +1,14 @@
+config BR2_PACKAGE_WOLFTPM
+	bool "wolftpm"
+	depends on BR2_PACKAGE_WOLFSSL
+    select BR2_PACKAGE_WOLFSSL_ALL
+	help
+	  wolfTPM is a portable, open-source TPM 2.0 stack with
+	  backward API compatibility, designed for embedded use.
+	  No external dependencies, compact code size with low
+	  resource usage.
+
+	  https://www.wolfssl.com/
+
+comment "wolfTPM needs the wolfSSL cryptographic library"
+	depends on !BR2_PACKAGE_WOLFSSL
