@@ -1,0 +1,18 @@
+config BR2_PACKAGE_ENACT
+	bool "enact"
+	depends on BR2_PACKAGE_WOLFTPM
+	depends on BR2_PACKAGE_LIBCURL
+	help
+	  EnactTrust is Open-source software that enables you to
+	  monitor the health of your system. EnactTrust has two
+	  components, the Enact agent application(this software)
+	  and a Security Cloud. The open source agent generates
+	  fresh evidence about the device and system health.
+
+	  https://www.enacttrust.com/
+
+comment "EnactTrust needs the wolfTPM 2.0 library for embedded systems"
+	depends on !BR2_PACKAGE_WOLFTPM
+
+comment "EnactTrust needs libcurl"
+	depends on !BR2_PACKAGE_LIBCURL
