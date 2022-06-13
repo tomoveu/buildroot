@@ -11,6 +11,16 @@ config BR2_PACKAGE_ENACT
 
 	  https://www.enacttrust.com/
 
+if BR2_PACKAGE_ENACT
+
+config BR2_PACKAGE_ENACT_TPM_GPIO
+    bool "TPM GPIO"
+    default n
+    help
+      Enable TPM GPIO support for safety-critical applications.
+
+endif
+
 comment "EnactTrust needs the wolfTPM 2.0 library for embedded systems"
 	depends on !BR2_PACKAGE_WOLFTPM
 
